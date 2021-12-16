@@ -1,0 +1,40 @@
+<ion-split-pane contentId="main">
+  <!--  the side menu  -->
+  <ion-menu contentId="main">
+    <ion-content>
+      <ion-grid>
+        <ion-row class="ion-margin-vertical ion-justify-content-center avatar-row">
+          <ion-col size="4"> <div class="avatar ion-margin-vertical"></div> </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-list>
+              <ion-menu-toggle auto-hide="false" *ngFor="let page of pages">
+                <ion-item
+                  lines="none"
+                  detail-icon="false"
+                  class="ion-margin-vertical"
+                  [routerLink]="page.url"
+                  [class.active-item]="selectedPath === page.url"
+                >
+                  <ion-icon class="ion-margin-horizontal" name="paper-plane-outline"></ion-icon>
+                  {{ page.title }}
+                </ion-item>
+              </ion-menu-toggle>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center power">
+          <ion-col size="2">
+            <ion-menu-toggle auto-hide="false">
+              <ion-icon [routerLink]="['/login']" name="power-outline"></ion-icon>
+            </ion-menu-toggle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-content>
+  </ion-menu>
+
+  <!-- the main content -->
+  <ion-router-outlet id="main" main></ion-router-outlet>
+</ion-split-pane>
