@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="ion-align-items-center ion-text-center">
+        <ion-col size="1">
+          <ion-buttons>
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col>
+          <h3>Logo</h3>
+        </ion-col>
+        <ion-col  size="1">
+          <ion-icon name="options-outline" class="nav-icons"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-around ion-text-center">
+        <ion-col>
+          <small>MISSIONS</small>
+        </ion-col>
+        <ion-col>
+          <small>NOTES</small>
+        </ion-col>
+        <ion-col>
+          <small>REQUESTS</small>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let mission of missions" lines="none" [routerLink]="['./', mission.id]">
+      <ion-card color="light">
+        <ion-card-header>
+          <div class="header">
+            <div class="left">
+              <ion-avatar>
+                <ion-img [src]="mission.avatar"></ion-img>
+              </ion-avatar>
+              <div class="left-inner">
+                <ion-card-title>{{ mission.name }}</ion-card-title>
+                <ion-label>{{ mission.location }}</ion-label>
+              </div>
+            </div>
+            <div class="right ion-text-right">
+              <ion-label>{{ mission.date }}</ion-label>
+              <ion-label>{{ mission.distance }} km</ion-label>
+            </div>
+          </div>
+        </ion-card-header>
+        <ion-card-content class="ion-no-padding">
+          <ion-img [src]="mission.imageUrl"></ion-img>
+        </ion-card-content>
+        <ion-card-content>
+          {{ mission.text }}
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>
