@@ -1,0 +1,63 @@
+<ion-content [fullscreen]>
+  <div class="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="4" offset-md="4">
+          <ion-grid>
+            <ion-row class="ion-justify-content-center">
+              <ion-col size="auto"> <div class="avatar"></div> </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="4" offset="4"> <h3>Sign In</h3> </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="10" offset="1">
+                <ion-item>
+                  <ion-icon name="mail-outline" slot="start"></ion-icon>
+                  <ion-input type="Email" name="email" [(ngModel)]="email"  placeholder="E-mail"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="10" offset="1">
+                <ion-item>
+                  <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+                  <ion-input type="password" name="password" [(ngModel)]="password" placeholder="Password"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="5" offset="7"> <small>forgot password?</small> </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="ion-text-center"> <small class="wrong ion-hide">Wrong Credentials! Please try again!</small> </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6" offset="3">
+                <p>Sign In With</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="2" offset="5" class="ion-align-self-center">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="5" offset="1">
+                <ion-button expand="block" fill="outline">Sign Up</ion-button>
+              </ion-col>
+              <ion-col size="5">
+                <ion-button expand="block" (click)="onClickAuthentication(email, password)">Sign In</ion-button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6" offset="3">
+                <small class="terms">Terms and conditions</small>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
