@@ -3,9 +3,17 @@
   height:35px;
 }
 
+ion-toolbar {
+  small {
+    color: rgb(149, 149, 149);
+  }
+}
 .header {
   display: flex;
   justify-content: space-between;
+  ion-label {
+    color: rgb(149, 149, 149);
+  }
   .left {
     display: flex;
     .left-inner {
