@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ loadedMission.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/menu/dashboard/missions"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-justify-content-between ion-align-items-center ion-text-center">
+      <ion-col class="ion-no-padding">
+        <ion-img [src]="loadedMission.imageUrl"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center ion-margin-top">
+      <ion-col size="2" offset="1">
+        <ion-avatar>
+          <ion-img [src]="loadedMission.avatar"></ion-img>
+        </ion-avatar>
+      </ion-col>
+      <ion-col  size="9">
+        <h1><strong>{{ loadedMission.name }}</strong></h1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center ion-margin-top">
+      <ion-col size="11" offset="1">
+        <p class="ion-no-margin"><strong>Location:</strong> {{ loadedMission.location }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="11" offset="1">
+        <p class="ion-no-margin"><strong>Date:</strong> {{ loadedMission.date }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="11" offset="1">
+        <p class="ion-no-margin"><strong>Distance:</strong> {{ loadedMission.distance }} km</p>
+      </ion-col>
+    </ion-row>
+    <ion-card color="light">
+      <ion-card-header>
+        <h3 class="ion-no-margin">Summary</h3>
+      </ion-card-header>
+      <ion-card-content>
+        {{ loadedMission.fulltext }}{{ loadedMission.fulltext }}
+      </ion-card-content>
+    </ion-card>
+    <ion-row class="ion-align-items-center ion-text-center">
+      <ion-col size="12">
+        <p><strong>Did you complete the mission?</strong></p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center ion-text-center">
+      <ion-col size="4" offset="2">
+        <ion-button color="danger" fill="outline"><ion-icon name="close-circle-outline"></ion-icon></ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button color="success" fill="outline"><ion-icon name="checkmark-circle-outline"></ion-icon></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
